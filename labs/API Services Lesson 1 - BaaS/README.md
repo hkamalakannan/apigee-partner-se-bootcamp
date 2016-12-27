@@ -116,13 +116,13 @@ Lets just use this URL once and erase this from our memories!
 - **Paging through results** is supported inherently by BaaS. By default, the GET API for data collections in BaaS returns 10 entities at a time. This can be changed by providing a `limits` query parameter when calling the API. To page through the results, API BaaS provides a cursor attribute, which can be used in subsequent calls
  - Open up another browser tab and go to 
  ```
-https://api.usergrid.com/{your-org}/hospitality/hotels
+ https://apibaas-trial.apigee.net/{your-org}/hospitality/hotels
  ```
  Replace `{your-org}` with the actual name of your API BaaS organization name
  **Note:** The `hospitality` App created for these lab exercises has been configured so that the Guest role has full permissions (that is, /** for GET, POST, PUT, and DELETE) to all the data collections in the App. As with any other app, you can secure the application by updating its roles and permissions. For more on working with permissions and roles, see [Managing access by defining permission rules](http://apigee.com/docs/app-services/content/managing-access-defining-permission-rules).
  - Effectively you’ve called the GET API for the `hotels` data collection by calling the above URL. Review the information presented in JSON format. This is the same information you previously saw on the BaaS portal. 
  - Browse towards the bottom of the response. You’ll notice that by default BaaS provides 10 entities at a time. This can be verified by looking at the attribute "count" : 10
- - Now call the GET API as follows with the limits parameter ``` https://api.usergrid.com/{your-org}/hospitality/hotels?limit=20 ```
+ - Now call the GET API as follows with the limits parameter ``` https://apibaas-trial.apigee.net/{your-org}/hospitality/hotels?limit=20 ```
  Replace `{your-org}` with the actual name of your API BaaS organization name.
  - Review the results and you’ll notice that BaaS has returned 20 hotels instead of 10 this time around
  - To page forward to the next set of results, copy the value of the `cursor` attributed provided at the bottom of the results and call the GET API again after adding the query parameter `cursor={cursor value}` to the URL. 
@@ -144,7 +144,7 @@ https://api.usergrid.com/{your-org}/hospitality/hotels
  - These queries can be submitted via the GET API by using the `ql` query parameter. The query string must be url-encoded. 
  - Switch to the browser tab used to issue GET API calls directly against the BaaS. For example, call the GET API as follows to get hotels in the city of Burlingame:
  ```
- https://api.usergrid.com/appservices/{your-org}/hospitality/hotels?ql=select%20*%20where%20city=%27Burlingame%27
+ https://apibaas-trial.apigee.net/{your-org}/hospitality/hotels?ql=select%20*%20where%20city=%27Burlingame%27
  ```
  Replace `{your-org}` with the actual name of your API BaaS organization name.
  **Note:** Most browsers will URL encode special characters automatically
