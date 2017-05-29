@@ -1,6 +1,6 @@
 var config = {} ;
 
-config.org = 'manishanker';
+config.org = 'kolabaas';
 config.app = 'hospitality';
-config.uri = "https://api.usergrid.com/" ;
+config.uri = " https://apibaas-trial.apigee.net" ;
 module.exports = config ;
